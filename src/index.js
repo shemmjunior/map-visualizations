@@ -8,7 +8,7 @@ const tile = L.tileLayer(tile_Url, { attribution });
 tile.addTo(globe_map);
 
 const iss_icon = L.icon({ 
-  iconUrl: '/markers/iss.png',
+  iconUrl: '../markers/iss.png',
   iconSize: [50, 32] 
 });
 
