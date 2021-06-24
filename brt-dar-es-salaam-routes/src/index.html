@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title><%= htmlWebpackPlugin.options.title %></title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+<link rel="stylesheet" href="./libraries/custom.css">
+</head>
+
+<body>
+<div id="map"></div>
+<div class="selectors">
+    <div class="select">
+      <select name="slct" id="slct" onclick="changeRoute(event)">
+        <option selected disabled>Choose a route</option>
+        <option value="kim-kiv">Kimara-Kivukoni</option>
+        <!-- <option value="mor-kim">Morroco-Kimara</option> -->
+        <!-- <option value="kkoo-kim">Kkoo-Kimara</option> -->
+        <option value="muh-kkoo">Muhimbili-Kkoo</option>
+      </select>
+    </div>
+  </div>
+
+</body>
+</html>
