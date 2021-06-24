@@ -9,7 +9,7 @@ module.exports = {
       hash: true,
       title: 'OSM Demo',
       template: './src/index.html',
-      filename: './index.html'
+      // filename: './index.html'
     }),
 
   ],
