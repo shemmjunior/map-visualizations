@@ -1,95 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Dar es Salaam BRT Routes</title>
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
-    <script defer src="main.bundle.js?98b29b74fdc936a2445a"></script>
-  </head>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    #map {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-    }
-    .selectors {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 1;
-    }
 
-    select {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      -ms-appearance: none;
-      appearance: none;
-      outline: 0;
-      box-shadow: none;
-      border: 0 !important;
-      background: #2c3e50;
-      background-image: none;
-    }
-    /* Remove IE arrow */
-    select::-ms-expand {
-      display: none;
-    }
-    /* Custom Select */
-    .select {
-      position: relative;
-      display: flex;
-      width: 20em;
-      height: 3em;
-      line-height: 3;
-      background: #2c3e50;
-      overflow: hidden;
-      border-radius: 0.25em;
-    }
-    select {
-      flex: 1;
-      padding: 0 0.5em;
-      color: #fff;
-      cursor: pointer;
-    }
-    /* Arrow */
-    .select::after {
-      content: "\25BC";
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: 0 1em;
-      background: #34495e;
-      cursor: pointer;
-      pointer-events: none;
-      -webkit-transition: 0.25s all ease;
-      -o-transition: 0.25s all ease;
-      transition: 0.25s all ease;
-    }
-    /* Transition */
-    .select:hover::after {
-      color: #f39c12;
-    }
-  </style>
-  <body>
-    <div id="map"></div>
-    <div class="selectors">
-      <div class="select">
-        <select name="slct" id="slct" onclick="changeRoute(event)">
-          <option selected disabled>Choose a route</option>
-          <option value="kim-kiv">Kimara-Kivukoni</option>
-          <!-- <option value="mor-kim">Morroco-Kimara</option> -->
-          <!-- <option value="kkoo-kim">Kkoo-Kimara</option> -->
-          <option value="muh-kkoo">Muhimbili-Kkoo</option>
-        </select>
-      </div>
+<head>
+<meta charset="utf-8">
+<title>Dar es Salaam BRT Routes</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+<script defer src="main.bundle.js?39dbfb92ead5a0eafcd0"></script></head>
+<style>
+  body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+.selectors {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #2c3e50;
+    background-image: none;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #2c3e50;
+    overflow: hidden;
+    border-radius: .25em;
+  }
+  select {
+    flex: 1;
+    padding: 0 .5em;
+    color: #fff;
+    cursor: pointer;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #34495e;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #f39c12;
+  }
+</style>
+<body>
+<div id="map"></div>
+<div class="selectors">
+    <div class="select">
+      <select name="slct" id="slct" onclick="changeRoute(event)">
+        <option disabled>Choose a route</option>
+        <option selected value="all">Show All Routes</option>
+        <option value="kim-kiv">Kimara-Kivukoni</option>
+        <!-- <option value="mor-kim">Morroco-Kimara</option> -->
+        <!-- <option value="kkoo-kim">Kkoo-Kimara</option> -->
+        <option value="muh-kkoo">Muhimbili-Kariakoo</option>
+      </select>
     </div>
-    <!-- <script src="./src/base.js"></script> -->
-  </body>
+  </div>
+<!-- <script src="./src/base.js"></script> -->
+
+</body>
 </html>

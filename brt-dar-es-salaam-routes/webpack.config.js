@@ -14,6 +14,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "geojson/*.geojson", to: "" },
+        { from: "layers/*.json", to: "" },
       ],
     }),
 

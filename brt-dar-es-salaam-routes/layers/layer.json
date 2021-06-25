@@ -1,0 +1,47 @@
+[
+    {
+        "id": "kim_kiv",
+        "type": "line",
+        "source": "kim_kiv",
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "blue",
+            "line-width": 4
+        }
+    },
+    {
+        "id": "kkoo_muh",
+        "type": "line",
+        "source": "kkoo_muh",
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "red",
+            "line-width": 4
+        }
+    },
+    {
+        "id": "symbols",
+        "type": "symbol",
+        "source": "kim_kiv",
+        "layout": {
+            "symbol-placement":  "line",
+            "symbol-spacing":1000,
+            "text-rotation-alignment": "auto",
+            "text-field": "Kimara - Kivukoni",
+            "text-size": 20,
+            "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+            "text-transform": "uppercase",
+            "text-letter-spacing": 0.2,
+            "text-offset": [0.8, 0.8]
+          },
+          "paint": {
+              "text-color": "white"
+          }
+    }
+]
