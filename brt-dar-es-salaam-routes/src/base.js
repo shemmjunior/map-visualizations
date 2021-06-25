@@ -1,6 +1,8 @@
-const kim_kiv = "../geojson/kim-posta.geojson";
+const kimara_kivukoni = "../geojson/kimara_kivukoni.geojson";
 const kkoo_mh = "../geojson/ko-mh.geojson";
-const mbezi_makumbusho = "../geojson/mbezi-makumbusho.geojson"
+const mbezi_makumbusho = "../geojson/mbezi-makumbusho.geojson";
+const morroco_kivukoin = "../geojson/morroco-kivukoni.geojson";
+
 let layers;
 
 mapboxgl.accessToken = "pk.eyJ1Ijoic2hlbW1qdW5pb3IiLCJhIjoiY2s4eXF5M24zMGtrcjNsdGFnODZlYnRybCJ9.X3IoNq1TeftY1LLGbeDVtw";
@@ -35,10 +37,10 @@ var map = new mapboxgl.Map({
 });
 
 map.on("load", () => {
-  map.addSource("kim_kiv", { type: "geojson", data: kim_kiv });
-  map.addSource("kkoo_muh", { type: "geojson", data: kkoo_mh });
+  map.addSource("kimara_kivukoni", { type: "geojson", data: kimara_kivukoni });
+  map.addSource("muh_kkoo", { type: "geojson", data: kkoo_mh });
   map.addSource("mbezi_makumbusho", { type: "geojson", data: mbezi_makumbusho });
-
+  map.addSource("morroco_kivukoni", { type: "geojson", data: morroco_kivukoin });
 
   layers.forEach((layer) => map.addLayer(layer));
 });
@@ -46,43 +48,43 @@ map.on("load", () => {
 changeRoute = (event) => {
   const selectedRoute = event.target.value;
   if (selectedRoute === "all") {
-    /** Lines */
-    map.setLayoutProperty("kim_kiv", "visibility", "visible");
-    map.setLayoutProperty("kkoo_muh", "visibility", "visible");
-    map.setLayoutProperty("mbezi_makumbusho", "visibility", "visible");
-    /** Symbols */
-    map.setLayoutProperty("symbol_mbezi_makumbusho", "visibility", "visible");
-    map.setLayoutProperty("symbol_kimara_kivukoni", "visibility", "visible");
+    layers.forEach((layer) => {
+      map.setLayoutProperty(layer.id, "visibility", "visible");
+    });
+  } else if (selectedRoute === "muh_kkoo") {
+    layers.forEach((layer) => {
+      map.setLayoutProperty(layer.id, "visibility", "none");
 
+      if (layer.id === "muh_kkoo") {
+        map.setLayoutProperty("muh_kkoo", "visibility", "visible");
+      }
+    });
+  } else if (selectedRoute === "kimara_kivukoni") {
+    layers.forEach((layer) => {
+      map.setLayoutProperty(layer.id, "visibility", "none");
 
-  } else if (selectedRoute === "muh-kkoo") {
-    /** Lines */
-    map.setLayoutProperty("kim_kiv", "visibility", "none");
-    map.setLayoutProperty("mbezi_makumbusho", "visibility", "none");
-    map.setLayoutProperty("kkoo_muh", "visibility", "visible");
-    /** Symbols */
-    map.setLayoutProperty("symbol_mbezi_makumbusho", "visibility", "none");
-    map.setLayoutProperty("symbol_kimara_kivukoni", "visibility", "none");
+      if (layer.id === "kimara_kivukoni") {
+        map.setLayoutProperty("kimara_kivukoni", "visibility", "visible");
+        map.setLayoutProperty("symbol_kimara_kivukoni", "visibility", "visible");
+      }
+    });
+  } else if (selectedRoute === "mbezi_makumbusho") {
+    layers.forEach((layer) => {
+      map.setLayoutProperty(layer.id, "visibility", "none");
 
-  } else if (selectedRoute === "kim-kiv") {
-    /** Lines */
-    map.setLayoutProperty("kkoo_muh", "visibility", "none");
-    map.setLayoutProperty("mbezi_makumbusho", "visibility", "none");
-    map.setLayoutProperty("kim_kiv", "visibility", "visible");
-    /** Symbols */
-    map.setLayoutProperty("symbol_kimara_kivukoni", "visibility", "visible");
-    map.setLayoutProperty("symbol_mbezi_makumbusho", "visibility", "none");
+      if (layer.id === "mbezi_makumbusho") {
+        map.setLayoutProperty("mbezi_makumbusho", "visibility", "visible");
+        map.setLayoutProperty("symbol_mbezi_makumbusho", "visibility", "visible");
+      }
+    });
+  } else if (selectedRoute === "morroco_kivukoni") {
+    layers.forEach((layer) => {
+      map.setLayoutProperty(layer.id, "visibility", "none");
 
-
-  } else if (selectedRoute === "mbezi-makumbusho") {
-    /** Lines */
-    map.setLayoutProperty("kim_kiv", "visibility", "none");
-    map.setLayoutProperty("kkoo_muh", "visibility", "none");
-    map.setLayoutProperty("mbezi_makumbusho", "visibility", "visible");
-    /** Symbols */
-    map.setLayoutProperty("symbol_mbezi_makumbusho", "visibility", "visible");
-    map.setLayoutProperty("symbol_kimara_kivukoni", "visibility", "none");
-
-
+      if (layer.id === "morroco_kivukoni") {
+        map.setLayoutProperty("morroco_kivukoni", "visibility", "visible");
+        map.setLayoutProperty("symbol_morroco_kivukoni", "visibility", "visible");
+      }
+    });
   }
 };

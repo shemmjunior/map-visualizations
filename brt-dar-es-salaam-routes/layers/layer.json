@@ -1,8 +1,8 @@
 [
     {
-        "id": "kim_kiv",
+        "id": "kimara_kivukoni",
         "type": "line",
-        "source": "kim_kiv",
+        "source": "kimara_kivukoni",
         "layout": {
             "line-join": "round",
             "line-cap": "round"
@@ -28,9 +28,23 @@
         }
     },
     {
-        "id": "kkoo_muh",
+        "id": "morroco_kivukoni",
         "type": "line",
-        "source": "kkoo_muh",
+        "source": "morroco_kivukoni",
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "purple",
+            "line-width": 4,
+            "line-opacity": 0.2
+        }
+    },
+    {
+        "id": "muh_kkoo",
+        "type": "line",
+        "source": "muh_kkoo",
         "layout": {
             "line-join": "round",
             "line-cap": "round"
@@ -44,11 +58,11 @@
     {
         "id": "symbol_kimara_kivukoni",
         "type": "symbol",
-        "source": "kim_kiv",
+        "source": "kimara_kivukoni",
         "layout": {
             "symbol-placement":  "line-center",
             "text-rotation-alignment": "auto",
-            "text-field": "Kimara - Kivukoni",
+            "text-field": "Kimara - Kivukoni (BRT)",
             "text-size": 12,
             "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
             "text-transform": "uppercase",
@@ -67,6 +81,24 @@
             "symbol-placement":  "line-center",
             "text-rotation-alignment": "auto",
             "text-field": "Mbezi - Makumbusho",
+            "text-size": 12,
+            "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+            "text-transform": "uppercase",
+            "text-letter-spacing": 0.2,
+            "text-offset": [0.8, 0.8]
+          },
+          "paint": {
+              "text-color": "white"
+          }
+    },
+    {
+        "id": "symbol_morroco_kivukoni",
+        "type": "symbol",
+        "source": "morroco_kivukoni",
+        "layout": {
+            "symbol-placement":  "line-center",
+            "text-rotation-alignment": "auto",
+            "text-field": "Morroco - Kivukoni (BRT)",
             "text-size": 12,
             "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
             "text-transform": "uppercase",
