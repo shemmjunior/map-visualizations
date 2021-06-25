@@ -9,7 +9,22 @@
         },
         "paint": {
             "line-color": "blue",
-            "line-width": 4
+            "line-width": 4,
+            "line-opacity": 0.2
+        }
+    },
+    {
+        "id": "mbezi_makumbusho",
+        "type": "line",
+        "source": "mbezi_makumbusho",
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "yellow",
+            "line-width": 4,
+            "line-opacity": 0.2
         }
     },
     {
@@ -22,19 +37,37 @@
         },
         "paint": {
             "line-color": "red",
-            "line-width": 4
+            "line-width": 4,
+            "line-opacity": 0.2
         }
     },
     {
-        "id": "symbols",
+        "id": "symbol_kimara_kivukoni",
         "type": "symbol",
         "source": "kim_kiv",
         "layout": {
-            "symbol-placement":  "line",
-            "symbol-spacing":1000,
+            "symbol-placement":  "line-center",
             "text-rotation-alignment": "auto",
             "text-field": "Kimara - Kivukoni",
-            "text-size": 20,
+            "text-size": 12,
+            "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+            "text-transform": "uppercase",
+            "text-letter-spacing": 0.2,
+            "text-offset": [0.8, 0.8]
+          },
+          "paint": {
+              "text-color": "white"
+          }
+    },
+    {
+        "id": "symbol_mbezi_makumbusho",
+        "type": "symbol",
+        "source": "mbezi_makumbusho",
+        "layout": {
+            "symbol-placement":  "line-center",
+            "text-rotation-alignment": "auto",
+            "text-field": "Mbezi - Makumbusho",
+            "text-size": 12,
             "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
             "text-transform": "uppercase",
             "text-letter-spacing": 0.2,
