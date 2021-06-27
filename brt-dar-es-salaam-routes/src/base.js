@@ -1,5 +1,4 @@
 const kimara_kivukoni = "../geojson/kimara_kivukoni.geojson";
-const kkoo_mh = "../geojson/ko-mh.geojson";
 const mbezi_makumbusho = "../geojson/mbezi-makumbusho.geojson";
 const morroco_kivukoin = "../geojson/morroco-kivukoni.geojson";
 const mbezi_kim_makumbusho = "../geojson/mbezi-kim-makumbusho.geojson";
@@ -42,7 +41,6 @@ var map = new mapboxgl.Map({
 
 map.on("load", () => {
   map.addSource("kimara_kivukoni", { type: "geojson", data: kimara_kivukoni });
-  map.addSource("muh_kkoo", { type: "geojson", data: kkoo_mh });
   map.addSource("mbezi_makumbusho", { type: "geojson", data: mbezi_makumbusho });
   map.addSource("morroco_kivukoni", { type: "geojson", data: morroco_kivukoin });
   map.addSource("mbezi_kim_makumbusho", { type: "geojson", data: mbezi_kim_makumbusho });
@@ -58,14 +56,6 @@ changeRoute = (event) => {
   if (selectedRoute === "all") {
     layers.forEach((layer) => {
       map.setLayoutProperty(layer.id, "visibility", "visible");
-    });
-  } else if (selectedRoute === "muh_kkoo") {
-    layers.forEach((layer) => {
-      map.setLayoutProperty(layer.id, "visibility", "none");
-
-      if (layer.id === "muh_kkoo") {
-        map.setLayoutProperty("muh_kkoo", "visibility", "visible");
-      }
     });
   } else if (selectedRoute === "kimara_kivukoni") {
     layers.forEach((layer) => {
