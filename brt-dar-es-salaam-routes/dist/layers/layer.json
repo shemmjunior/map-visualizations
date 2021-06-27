@@ -28,6 +28,34 @@
         }
     },
     {
+        "id": "makumbusho_posta",
+        "type": "line",
+        "source": "makumbusho_posta",
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "pink",
+            "line-width": 4,
+            "line-opacity": 0.6
+        }
+    },
+    {
+        "id": "mbezi_kim_makumbusho",
+        "type": "line",
+        "source": "mbezi_kim_makumbusho",
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "green",
+            "line-width": 4,
+            "line-opacity": 0.2
+        }
+    },
+    {
         "id": "morroco_kivukoni",
         "type": "line",
         "source": "morroco_kivukoni",

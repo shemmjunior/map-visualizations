@@ -2,6 +2,8 @@ const kimara_kivukoni = "../geojson/kimara_kivukoni.geojson";
 const kkoo_mh = "../geojson/ko-mh.geojson";
 const mbezi_makumbusho = "../geojson/mbezi-makumbusho.geojson";
 const morroco_kivukoin = "../geojson/morroco-kivukoni.geojson";
+const mbezi_kim_makumbusho = "../geojson/mbezi-kim-makumbusho.geojson";
+const makumbusho_posta = "../geojson/makumbusho-posta.geojson"
 
 let layers;
 
@@ -43,6 +45,10 @@ map.on("load", () => {
   map.addSource("muh_kkoo", { type: "geojson", data: kkoo_mh });
   map.addSource("mbezi_makumbusho", { type: "geojson", data: mbezi_makumbusho });
   map.addSource("morroco_kivukoni", { type: "geojson", data: morroco_kivukoin });
+  map.addSource("mbezi_kim_makumbusho", { type: "geojson", data: mbezi_kim_makumbusho });
+  map.addSource("makumbusho_posta", { type: "geojson", data: makumbusho_posta });
+
+
 
   layers.forEach((layer) => map.addLayer(layer));
 });
@@ -88,5 +94,23 @@ changeRoute = (event) => {
         map.setLayoutProperty("symbol_morroco_kivukoni", "visibility", "visible");
       }
     });
-  }
+  } else if (selectedRoute === "mbezi_kim_makumbusho") {
+    layers.forEach((layer) => {
+      map.setLayoutProperty(layer.id, "visibility", "none");
+
+      if (layer.id === "mbezi_kim_makumbusho") {
+        map.setLayoutProperty("mbezi_kim_makumbusho", "visibility", "visible");
+        map.setLayoutProperty("symbol_mbezi_kim_makumbusho", "visibility", "visible");
+      }
+    });
+  }  else if (selectedRoute === "makumbusho_posta") {
+    layers.forEach((layer) => {
+      map.setLayoutProperty(layer.id, "visibility", "none");
+
+      if (layer.id === "makumbusho_posta") {
+        map.setLayoutProperty("makumbusho_posta", "visibility", "visible");
+        map.setLayoutProperty("symbol_makumbusho_posta", "visibility", "visible");
+      }
+    });
+  } 
 };
