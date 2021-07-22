@@ -32,11 +32,13 @@ init();
 
 var map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/mapbox/dark-v10",
+  style: "mapbox://styles/mapbox/light-v10",
   center: [39.199683, -6.7767275],
-  zoom: 12,
-  maxZoom: 15,
+  zoom: 15,
+  // maxZoom: 15,
   minZoom: 10,
+  bearing: -17.6,
+  pitch: 45,
 });
 
 map.on("load", () => {
@@ -47,8 +49,10 @@ map.on("load", () => {
   map.addSource("makumbusho_posta", { type: "geojson", data: makumbusho_posta });
 
 
-
   layers.forEach((layer) => map.addLayer(layer));
+
+
+
 });
 
 changeRoute = (event) => {
@@ -64,6 +68,7 @@ changeRoute = (event) => {
       if (layer.id === "kimara_kivukoni") {
         map.setLayoutProperty("kimara_kivukoni", "visibility", "visible");
         map.setLayoutProperty("symbol_kimara_kivukoni", "visibility", "visible");
+
       }
     });
   } else if (selectedRoute === "mbezi_makumbusho") {
@@ -73,6 +78,8 @@ changeRoute = (event) => {
       if (layer.id === "mbezi_makumbusho") {
         map.setLayoutProperty("mbezi_makumbusho", "visibility", "visible");
         map.setLayoutProperty("symbol_mbezi_makumbusho", "visibility", "visible");
+      
+
       }
     });
   } else if (selectedRoute === "morroco_kivukoni") {
@@ -82,6 +89,8 @@ changeRoute = (event) => {
       if (layer.id === "morroco_kivukoni") {
         map.setLayoutProperty("morroco_kivukoni", "visibility", "visible");
         map.setLayoutProperty("symbol_morroco_kivukoni", "visibility", "visible");
+      
+
       }
     });
   } else if (selectedRoute === "mbezi_kim_makumbusho") {
@@ -91,6 +100,8 @@ changeRoute = (event) => {
       if (layer.id === "mbezi_kim_makumbusho") {
         map.setLayoutProperty("mbezi_kim_makumbusho", "visibility", "visible");
         map.setLayoutProperty("symbol_mbezi_kim_makumbusho", "visibility", "visible");
+      
+
       }
     });
   }  else if (selectedRoute === "makumbusho_posta") {
@@ -100,6 +111,8 @@ changeRoute = (event) => {
       if (layer.id === "makumbusho_posta") {
         map.setLayoutProperty("makumbusho_posta", "visibility", "visible");
         map.setLayoutProperty("symbol_makumbusho_posta", "visibility", "visible");
+      
+
       }
     });
   } 

@@ -70,20 +70,6 @@
         }
     },
     {
-        "id": "muh_kkoo",
-        "type": "line",
-        "source": "muh_kkoo",
-        "layout": {
-            "line-join": "round",
-            "line-cap": "round"
-        },
-        "paint": {
-            "line-color": "red",
-            "line-width": 4,
-            "line-opacity": 0.2
-        }
-    },
-    {
         "id": "symbol_kimara_kivukoni",
         "type": "symbol",
         "source": "kimara_kivukoni",
@@ -136,5 +122,37 @@
           "paint": {
               "text-color": "white"
           }
+    },
+    {
+        "id": "3d-buildings",
+        "source": "composite",
+        "source-layer": "building",
+        "filter": ["==", "extrude", "true"],
+        "type": "fill-extrusion",
+        "minzoom": 15,
+        "paint": {
+            "fill-extrusion-color": [
+                "interpolate",
+                ["exponential", 0.99],
+                ["get", "height"],
+                0,
+                "#FFF6B7",
+                500,
+                "#F6416C"
+            ],
+            "fill-extrusion-height": [
+                "interpolate", ["linear"],
+                ["zoom"],
+                15, 0,
+                15.05, ["get", "height"]
+            ],
+            "fill-extrusion-base": [
+                "interpolate", ["linear"],
+                ["zoom"],
+                15, 0,
+                15.05, ["get", "min_height"]
+            ],
+            "fill-extrusion-opacity": 0.6
+        }
     }
 ]
