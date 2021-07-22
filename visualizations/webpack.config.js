@@ -7,7 +7,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       hash: true,
-      title: 'Dar es Salaam BRT Routes',
+      title: 'Dar es Salaam Routes',
       template: './src/index.html',
       filename: './index.html'
     }),
